@@ -15,6 +15,7 @@ class HomeController extends Controller
     {
         $nome =  'Thiago Scheidt';
         return view('home', compact('nome'));
+        
         //return view('home')->with('nome', $nome);
     }
 
