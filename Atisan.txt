@@ -1,0 +1,52 @@
+MVC
+
+URL/Controller/method/parameter
+
+Index = Controller padrão - Controller se método
+
+show - Pesquisar, Pegar um Registro especifico
+
+edit - Mostrar formulário para alterar/atualizar registro
+
+update - Atualiza o registro do banco de dados
+
+create - Mostrar o formulário de cadastro
+
+store - Cadastrar no banco de dados
+
+destroy - remover banco do banco de dados ou logout do sistema
+
+//
+hasDog
+isDog
+
+PHP Artisan
+
+app:name aplication namespace
+
+down : manutenção
+
+up : online
+
+env : ambiente - .env
+
+migrate - Banco de dados
+
+make
+	- make:model, --controller, --factory
+	- rout:list
+	- config:clear - limpar cache de configurações, erros
+	- php artisan tinker - Iteração com projeto
+	- factory - dados fake
+		-- factory(APP\Post::class, 20)->create()
+	- php artisan make factory
+	- php artisan make factory --model=Post
+	 -- $user = App\Users::all();
+
+Banco de dados
+	-- DB Query builder : Monta uma query
+
+	-- Eloquent : Métodos Prontos 
+	-- Eloquent + model = Successes
+	-- VSCODE: Alt + ctrl + I : ImportClass
+	-- Model: protected $table = '<TableName>';

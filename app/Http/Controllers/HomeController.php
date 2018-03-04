@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,10 +14,31 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $nome =  'Thiago Scheidt';
-        return view('home', compact('nome'));
+        //$posts = new Post();
+        $posts = new Post();
+        return $posts->greaterThan(12);
+
+     //$posts = Post::all();
+
+ //       return $posts;
+
+        // Eloquent
+
+        //
+//         $users = \DB   ::table('users')->where('id', '>', 2)->orderBy('name')->get();	
+      //   return $users;
+        //$users = \DB::table('users')->get();
+        //return $users;
+
+//        $posts = \App\Post::all();
+        //var_dump(env('APP_NAME'));
+        //dd($_ENV);
+        //$nome =  'Thiago Scheidt';
+       // return view('home', compact('nome'));
         
         //return view('home')->with('nome', $nome);
+
+       // return $posts;
     }
 
     /**
@@ -50,7 +72,6 @@ class HomeController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
