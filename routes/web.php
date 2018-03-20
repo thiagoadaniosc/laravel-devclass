@@ -14,10 +14,11 @@
 //Route::get('/','HomeController@index');
 
 //Route::post('/produto/store', 'ProdutoController@store');
-
 Route::get('/', 'HomeController@index');
 Route::get('/user/create', 'UserController@create');
+Route::post('/user/store', 'UserController@store');
 //Route::get('/posts', 'PostController@index');
+
 
 //Route::get('/post/store', 'PostController@index');
 //Route::get();

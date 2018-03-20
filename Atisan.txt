@@ -7,10 +7,9 @@ Index = Controller padrão - Controller se método
 show - Pesquisar, Pegar um Registro especifico
 
 edit - Mostrar formulário para alterar/atualizar registro
+create - Mostrar o formulário de cadastro
 
 update - Atualiza o registro do banco de dados
-
-create - Mostrar o formulário de cadastro
 
 store - Cadastrar no banco de dados
 
@@ -50,3 +49,10 @@ Banco de dados
 	-- Eloquent + model = Successes
 	-- VSCODE: Alt + ctrl + I : ImportClass
 	-- Model: protected $table = '<TableName>';
+
+	fillable -> Campos Permitidos, ou
+	guarded -> Campos Proibidos
+
+	unsigned -> valores negativos
+
+	references->('id)->on('table');

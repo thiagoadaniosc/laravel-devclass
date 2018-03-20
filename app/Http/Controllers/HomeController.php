@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,9 +15,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        $posts = Post::all();
+        $user = User::all();
+
+        dd($user->find(25)->posts->all());
+
+        return view('home', compact('posts'));
+
         //$posts = new Post();
-        $posts = new Post();
-        return $posts->greaterThan(12);
+        // $posts = new Post();
+        // return $posts->greaterThan(12);
 
      //$posts = Post::all();
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -23,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user_create');
     }
 
     /**
@@ -34,7 +36,28 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->except('_token'));
+        // dd($request->input('email'));
+        // dd($request('email'));
+        // dd($request->all());
+        // $user = new User;
+        // $user->create($request->all());
+        // $user = new User;
+        // $user->name = 'Alexandre';
+        // $user->email = 'Email';
+        // $user->last_name = 'Email';
+        // $user->password = Hash::make('123');
+        // $user->save();
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $user = new User;
+        $user->create($request->all());
+        session()->flash('message', 'Cadastrado Com sucesso');
+        return back();
     }
 
     /**
