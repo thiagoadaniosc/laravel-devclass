@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Post;
-use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class adminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,39 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $posts = Post::all();
-        $user = User::all();
-
-        dd($user->find(25)->posts->all());
-
-        return view('home', compact('posts'));
-
-        //$posts = new Post();
-        // $posts = new Post();
-        // return $posts->greaterThan(12);
-
-     //$posts = Post::all();
-
- //       return $posts;
-
-        // Eloquent
-
-        //
-//         $users = \DB   ::table('users')->where('id', '>', 2)->orderBy('name')->get();	
-      //   return $users;
-        //$users = \DB::table('users')->get();
-        //return $users;
-
-//        $posts = \App\Post::all();
-        //var_dump(env('APP_NAME'));
-        //dd($_ENV);
-        //$nome =  'Thiago Scheidt';
-       // return view('home', compact('nome'));
-        
-        //return view('home')->with('nome', $nome);
-
-       // return $posts;
+        dd('hello admin');
     }
 
     /**
@@ -57,7 +24,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        dd('create admin');
     }
 
     /**
@@ -81,6 +48,7 @@ class HomeController extends Controller
     {
         //
     }
+
     /**
      * Show the form for editing the specified resource.
      *

@@ -14,9 +14,21 @@
 //Route::get('/','HomeController@index');
 
 //Route::post('/produto/store', 'ProdutoController@store');
-Route::get('/', 'HomeController@index');
-Route::get('/user/create', 'UserController@create');
-Route::post('/user/store', 'UserController@store');
+
+Route::namespace('portal')->group(function(){
+    Route::get('/', 'HomeController@index');
+    Route::get('/user/create', 'UserController@create');
+    Route::post('/user/store', 'UserController@store');
+});
+
+Route::namespace('forum')->group(function(){
+    Route::get('/forum', 'ForumController@index');
+});
+
+Route::namespace('admin')->prefix('admin')->group(function(){
+    Route::get('/', 'AdminController@index');
+    Route::get('/post/create', 'AdminController@create');
+});
 //Route::get('/posts', 'PostController@index');
 
 
