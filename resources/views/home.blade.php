@@ -6,10 +6,20 @@
         {{--  {{ $user->name }}  --}}
     {{--  @endforeach  --}}
 
-    <ul>
+    {{-- <ul>
         @foreach ($posts as $post)
     <li>{{$post->title}} - <small>{{$post->user->name}}</small></li>
         @endforeach
-    </ul>
+    </ul> --}}
+
+  
+    <h2>Home</h2>
+
+    @component('components.alert')
+        @slot('title')
+            Alerta Título
+        @endslot
+        mensagem
+    @endcomponent
 
 @endsection

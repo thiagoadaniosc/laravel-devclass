@@ -10,9 +10,16 @@
 <body>
     
     <div class="container">
-        <section class="header">
-            @include('includes.header')
-        </section>
+        <div class="float-right">
+            
+            @if (Auth::check())
+                Olá {{ auth()->user()->name }}, Bem vindo
+                <a href="/login/destroy" class="btn btn-danger">Sair</a>
+            @else
+            Bem Vindo Visitante
+            <a href="/login" class="btn btn-danger">Login</a>
+            @endif
+        </div>
         @yield('portal')
     </div>
 </body>

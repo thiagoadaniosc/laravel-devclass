@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\portal;
+namespace App\Http\Controllers;
 
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -17,12 +17,14 @@ class HomeController extends Controller
     public function index()
     {
 
-        $posts = Post::all();
-        $user = User::all();
+        return view('home');
+        //Auth::loginUsingId(4);
+       // Auth::logout();
 
-        dd($user->find(440)->posts->all());
+       // $posts = Post::all();
+        //$user = User::all();
 
-        return view('home', compact('posts'));
+        //return view('home', compact('posts'));
 
         //$posts = new Post();
         // $posts = new Post();
@@ -44,7 +46,7 @@ class HomeController extends Controller
         //var_dump(env('APP_NAME'));
         //dd($_ENV);
         //$nome =  'Thiago Scheidt';
-       // return view('home', compact('nome'));
+       // return view(' ', compact('nome'));
         
         //return view('home')->with('nome', $nome);
 

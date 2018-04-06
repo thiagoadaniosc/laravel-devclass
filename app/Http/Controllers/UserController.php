@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\portal;
+namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
@@ -56,9 +56,17 @@ class UserController extends Controller
             'password' => 'required'
         ]);
         $user = new User;
-        $user->create($request->all());
-        session()->flash('message', 'Cadastrado Com sucesso');
-        return back();
+        // $user->create($request->all());
+        $user = $user->create([
+            'name' => $request->name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        auth()->login($user);
+       // session()->flash('message', 'Cadastrado Com sucesso');
+        return redirect('/');
     }
 
     /**
